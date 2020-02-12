@@ -24,7 +24,6 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
                 intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = findViewById(R.id.order_textview);
         RadioButton rb = findViewById(R.id.pickup);
-        this.<RadioButton>findViewById(R.id.pickup).setChecked(true);
         rb.setChecked(true);
 
         textView.setText(message);
@@ -46,7 +45,10 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         // Apply the adapter to the spinner.
         if (spinner != null) {
             spinner.setAdapter(adapter);
+            // Prevent spinner from receiving focus
+//            spinner.setFocusable(false);
         }
+        findViewById(R.id.name_text).requestFocus();
     }
 
     public void displayToast(String message) {
@@ -80,8 +82,8 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         }
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long id) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int
+            i, long l) {
         String spinnerLabel = adapterView.getItemAtPosition(i).toString();
         displayToast(spinnerLabel);
     }
