@@ -48,7 +48,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         if (spinner != null) {
             spinner.setAdapter(adapter);
             // Prevent spinner from receiving focus
-//            spinner.setFocusable(false);
+            spinner.setFocusable(false);
         }
         findViewById(R.id.name_text).requestFocus();
     }
