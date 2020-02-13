@@ -2,6 +2,7 @@ package com.example.droidcafedemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -82,6 +84,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         }
     }
 
+    @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int
             i, long l) {
         String spinnerLabel = adapterView.getItemAtPosition(i).toString();
